@@ -1,0 +1,42 @@
+restcommands : [{
+	"restgetcommands" : [{
+		"restgetcommand" : {
+	    	"subject" : "socket",
+	    	"command" : "poweroff",
+	    	"url" : "http://fritz.box/webservices/homeautoswitch.lua?ain=087610220316&switchcmd=setswitchoff&sid=%s",
+			"parameters" : ["sid"]
+		},
+		"restgetcommand" : {
+			"subject" : "socket",
+			"command" : "poweron",
+			"url" : "http://fritz.box/webservices/homeautoswitch.lua?ain=087610220316&switchcmd=setswitchon&sid=%s",
+			"parameters" : ["sid"]
+		}	
+	}],
+	"restputcommands" : [{
+		"restputcommand" : {
+			"subject" : "socket2",
+			"command" : "poweron",
+			"url" : "http://joel-flocke:8080/api/A73B4CB46E/lights/1/state",
+			"body" : "{ \"on\" : true }"
+		},
+		"restputcommand" : {
+			"subject" : "socket2",
+			"command" : "poweroff",
+			"url" : "http://joel-flocke:8080/api/A73B4CB46E/lights/1/state",
+			"body" : "{ \"on\" : false }"
+		},
+		"restputcommand" : {
+			"subject" : "light1",
+			"command" : "lighton",
+			"url" : "http://joel-flocke:8080/api/A73B4CB46E/lights/1/state",
+			"body" : "{ \"on\" : true }"
+		},
+		"restputcommand" : {
+			"subject" : "light1",
+			"command" : "lightff",
+			"url" : "http://joel-flocke:8080/api/A73B4CB46E/lights/1/state",
+			"body" : "{ \"on\" : false }"
+		}
+	}]
+}]
